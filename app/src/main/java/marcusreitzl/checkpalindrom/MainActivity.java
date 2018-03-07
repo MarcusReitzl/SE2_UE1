@@ -9,13 +9,19 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity {
 
     public void conditions (View irgendwas) {
-        TextView notok = (TextView) findViewById(R.id.Output);
+        TextView invalid = (TextView) findViewById(R.id.Output);
         EditText et = (EditText) findViewById(R.id.Input);
         String input = et.getText().toString();
         if (input.length()<5){
-            et.setText("CheckPalidrom failed");
-        }else
+            invalid.setText("invalid input");
+        }else {
             isPalindrome(input);
+            if (isPalindrome(input) == true) {
+                invalid.setText("CheckPalindrom OK");
+            } else {
+                invalid.setText("CheckPalindrom failed ");
+            }
+        }
     }
 
     public static boolean isPalindrome(String str) {
