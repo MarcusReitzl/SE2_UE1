@@ -11,15 +11,14 @@ public class MainActivity extends AppCompatActivity {
     public void conditions (View irgendwas) {
         TextView invalid = (TextView) findViewById(R.id.Output);
         EditText et = (EditText) findViewById(R.id.Input);
-        String input = et.getText().toString();
-        if (input.length()<5){
-            invalid.setText("invalid input");
+        String entry = et.getText().toString();
+        if (entry.length()<5){
+            invalid.setText("invalid entry");
         }else {
-            isPalindrome(input);
-            if (isPalindrome(input) == true) {
-                invalid.setText("CheckPalindrom OK");
+            if (isPalindrome(entry) == true) {
+                invalid.setText("CheckPalindrom PalindromOK");
             } else {
-                invalid.setText("CheckPalindrom failed ");
+                invalid.setText("CheckPalindrom noPalindrom ");
             }
         }
     }
